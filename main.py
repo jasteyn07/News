@@ -47,11 +47,6 @@ def push_to_github(filename, content):
         print("Everything up to date")
 
 
-@app.route('/')
-def hello_world():
-    return redirect("https://saurav.tech/NewsAPI/")
-
-
 def update_top_headline():
     for category in CATEGORIES:
         for country in COUNTRIES_LANGUAGES:

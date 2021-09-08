@@ -49,7 +49,7 @@ def push_to_github(filename, content):
 
 @app.route('/')
 def hello_world():
-    return redirect("https://collabnews.herokuapp.com/")
+    return redirect("http://collabnews.herokuapp.com/")
 
 
 def update_top_headline():

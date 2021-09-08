@@ -30,11 +30,11 @@ def get_key():
 def push_to_github(filename, content):
     url = "https://api.github.com/repos/jasteyn07/News/contents/" + filename
     base64content = base64.b64encode(bytes(json.dumps(content), 'utf-8'))
-    data = requests.get(url + '?ref=master', headers={"Authorization": "token " + GITHUB_API_TOKEN}).json()
+    data = requests.get(url + '?ref=main', headers={"Authorization": "token " + GITHUB_API_TOKEN}).json()
     sha = data['sha']
     if base64content.decode('utf-8') != data['content'].replace("\n", ""):
         message = json.dumps({"message": "update " + filename,
-                              "branch": "master",
+                              "branch": "main",
                               "content": base64content.decode("utf-8"),
                               "sha": sha
                               })
